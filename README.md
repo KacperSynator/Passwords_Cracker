@@ -18,11 +18,11 @@ words are modified same as in basic threads. The last thread generates numeric p
 ### Prerequisites
 #### 1. pthread library
 ```bash
-sudo apt install pthread
+sudo apt-get install libpthread-stubs0-dev
 ```
 #### 2. open-ssl library
 ```bash
-sudo apt install openssl-dev
+sudo apt-get install openssl libssl-dev
 ```
 #### 3. download dictionaries (optional)  
    `InsidePro (Mini)` dictionary is included.  
@@ -40,4 +40,32 @@ make
 ## Example
 ```bash
 ./pass_cr passwords1.txt
+
+consumer thread: cracked password received: thomas
+cracking thread 0: password broken -> topgun
+consumer thread: cracked password received: topgun
+cracking thread 0: password broken -> trigger
+consumer thread: cracked password received: trigger
+cracking thread 0: password broken -> trinity
+consumer thread: cracked password received: trinity
+cracking thread 0: password broken -> troutt
+consumer thread: cracked password received: troutt
+cracking thread 0: password broken -> victoria
+consumer thread: cracked password received: victoria
+cracking thread 0: password broken -> vision
+consumer thread: cracked password received: vision
+cracking thread 0: password broken -> whatever
+consumer thread: cracked password received: whatever
+cracking thread 0: password broken -> whiskey
+cracking thread 0: password broken -> wolverine
+consumer thread: cracked password received: wolverine
+cracking thread 3: password broken -> 281091
+consumer thread: cracked password received: 281091
+stacracking thread 3: password broken -> 449717
+consumer thread: cracked password received: 449717
+tscracking thread 1: password broken -> Charlie1
+consumer thread: cracked password received: Charlie1
+
+main: waiting for input:
+consumer thread: stats -> cracked 79 of 321  24.61%
 ```
