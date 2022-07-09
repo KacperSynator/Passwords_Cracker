@@ -39,7 +39,7 @@ make
 
 ## Example
 ```bash
-./pass_cr passwords1.txt
+./pass_cr ../data/passwords1.txt
 
 consumer thread: cracked password received: thomas
 cracking thread 0: password broken -> topgun

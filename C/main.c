@@ -29,7 +29,7 @@
  */
 
 #define USAGE "usage: ./pass_cr passwords_file [dictionary_file]\n"
-#define DEFAULT_DICTIONARY "inside_pro_mini.dic"
+#define DEFAULT_DICTIONARY "../data/inside_pro_mini.dic"
 #define BUF_SIZE 64
 #define NUM_THREADS 8
 #define U_LONG_MAX 4294967295
