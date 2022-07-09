@@ -8,11 +8,17 @@ dictionary, every thread is generating passwords using different method. Three b
 numbers before or/and after generated word. Another three threads generate two word passwords separated by " ", "2", "4" or nothing,
 words are modified same as in basic threads. The last thread generates numeric passwords. Main loop is reading user input.
 
+C++ version is a simplified and doesn't generate two word passwords and doesn't read user input from std in.
+
+## Files 
+App takes file with hashed passwords as first argument and optional second argument dictionary file.  
+For C version you must provide path to file from current directory, in C++ version add files to data directory then provide only filename.
 ## User input
 `stats` or `SIGHUP` signal -> print statistics  
 `path to new passwords file` -> reset program (also prints stats)  
 `exit` or `SIGINT` signal (CTRL + C) - > exit program (after `SIGINT` typing any key is required)  
 
+C++ version handles only signal input from std in is not parsed.
 
 ## Getting started
 ### Prerequisites
@@ -33,13 +39,22 @@ sudo apt-get install openssl libssl-dev
    
 ## Compile and run
 ```bash
+mkdir build
+cd build
+cmake ..
 make
-./pass_cr <password file> [dictionary file]
+# for C version
+./C/password_cracker_c <password file> [dictionary file]
+# for C++ version
+./C++/password_cracker_c++ <password file> [dictionary file]
 ```
-
 ## Example
 ```bash
-./pass_cr ../data/passwords1.txt
+# for C version
+./C/password_cracker_c ../data/passwords1.txt
+
+# for C++ version
+./C++/password_cracker_c++ passwords1.txt
 
 consumer thread: cracked password received: thomas
 cracking thread 0: password broken -> topgun
